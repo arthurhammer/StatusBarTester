@@ -6,5 +6,6 @@ A simple app to quickly toggle the double-height status bar (on applicable devic
 
 ![Screenshot](screenshot.png)
 
-
 Swift 5, Xcode 10.3
+
+[Read more about it here.](https://arthurhammer.de/2019/09/status-bar-tester/)
