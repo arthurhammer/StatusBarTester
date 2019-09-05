@@ -22,31 +22,47 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0l-b9-s0E">
-                                <rect key="frame" x="20" y="743" width="374" height="65"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="BMe-2N-Mkl"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="toggleLocationUpdates" destination="BYZ-38-t0r" eventType="touchUpInside" id="1qS-ff-22g"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="zxk-cr-WVY">
+                                <rect key="frame" x="30" y="649" width="354" height="133"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0l-b9-s0E">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="65"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="65" id="BMe-2N-Mkl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="toggleActivity" destination="BYZ-38-t0r" eventType="touchUpInside" id="1qS-ff-22g"/>
+                                        </connections>
+                                    </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3go-bs-njv">
+                                        <rect key="frame" x="0.0" y="105" width="354" height="29"/>
+                                        <segments>
+                                            <segment title="Location"/>
+                                            <segment title="Audio"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="chooseActivity:" destination="BYZ-38-t0r" eventType="valueChanged" id="KjF-YH-Xca"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="yYK-fA-CGX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BuQ-9Y-ius"/>
                             <constraint firstItem="yYK-fA-CGX" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="MNS-KF-nk0"/>
                             <constraint firstItem="yYK-fA-CGX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MrQ-fi-Eff"/>
+                            <constraint firstItem="zxk-cr-WVY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="gJo-tt-UyF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zxk-cr-WVY" secondAttribute="trailing" constant="30" id="hmv-HQ-EdV"/>
                             <constraint firstAttribute="bottom" secondItem="yYK-fA-CGX" secondAttribute="bottom" id="j9e-FQ-FNB"/>
-                            <constraint firstItem="z0l-b9-s0E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="opk-et-fCc"/>
-                            <constraint firstAttribute="trailing" secondItem="z0l-b9-s0E" secondAttribute="trailing" constant="20" id="spS-ff-MU4"/>
-                            <constraint firstAttribute="bottom" secondItem="z0l-b9-s0E" secondAttribute="bottom" constant="88" id="tMa-eA-X1f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zxk-cr-WVY" secondAttribute="bottom" constant="80" id="nqa-DG-80h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityChooser" destination="3go-bs-njv" id="vIi-Qe-MJT"/>
                         <outlet property="backgroundView" destination="yYK-fA-CGX" id="c2t-E9-xdq"/>
                         <outlet property="button" destination="z0l-b9-s0E" id="f8Y-eC-uEu"/>
                     </connections>
